@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import BasicInfoForm from './BasicInfoForm';
 import PersonalInfoForm from './PersonalInfoForm';
 import ConfirmPage from './ConfirmPage';
+// import PersonalInfoForm from './PersonalInfoForm';
+// import ConfirmPage from './ConfirmPage';
 
 export class MainUserForm extends Component {
   state = {
@@ -11,6 +13,7 @@ export class MainUserForm extends Component {
     email: '',
     city: '',
     country: '',
+    age: '',
   };
 
   // Proceed to next stage on form
@@ -36,8 +39,8 @@ export class MainUserForm extends Component {
 
   render() {
     const { stage } = this.state;
-    const { firstName, lastName, email, city, country } = this.state;
-    const values = { firstName, lastName, email, city, country };
+    const { firstName, lastName, email, age, city, country } = this.state;
+    const values = { firstName, lastName, email, age, city, country };
 
     switch (stage) {
       case 1:
@@ -49,9 +52,16 @@ export class MainUserForm extends Component {
           />
         );
       case 2:
-        return <h1>Personal Info Form</h1>;
+        return (
+          <PersonalInfoForm
+            nextStage={this.nextStage}
+            prevStage={this.prevStage}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
       case 3:
-        return <h1>Confirm Page</h1>;
+        return <ConfirmPage nextStage={this.nextStage} prevStage={this.prevStage} />;
       case 4:
         return <h1> Complete Page</h1>;
 

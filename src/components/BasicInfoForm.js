@@ -25,22 +25,22 @@ export class BasicInfoForm extends Component {
           <TextField
             hintText="Enter your first name"
             floatingLabelText="First Name"
-            // onChange={handleChange('firstName')}
-            // defaultValue={values.firstName}
+            onChange={handleChange('firstName')}
+            defaultValue={values.firstName}
           />
           <br />
           <TextField
             hintText="Enter your last name"
             floatingLabelText="Last Name"
-            // onChange={handleChange('lastName')}
-            // defaultValue={values.lastName}
+            onChange={handleChange('lastName')}
+            defaultValue={values.lastName}
           />
           <br />
           <TextField
             hintText="Enter your email"
             floatingLabelText="Email"
-            // onChange={handleChange('email')}
-            // defaultValue={values.email}
+            onChange={handleChange('email')}
+            defaultValue={values.email}
           />
           <br />
           <RaisedButton
