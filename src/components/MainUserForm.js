@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BasicInfoForm from './BasicInfoForm';
 import PersonalInfoForm from './PersonalInfoForm';
 import ConfirmPage from './ConfirmPage';
+import CompletePage from './CompletePage';
 // import PersonalInfoForm from './PersonalInfoForm';
 // import ConfirmPage from './ConfirmPage';
 
@@ -61,9 +62,11 @@ export class MainUserForm extends Component {
           />
         );
       case 3:
-        return <ConfirmPage nextStage={this.nextStage} prevStage={this.prevStage} />;
+        return (
+          <ConfirmPage nextStage={this.nextStage} prevStage={this.prevStage} values={values} />
+        );
       case 4:
-        return <h1> Complete Page</h1>;
+        return <CompletePage />;
 
       // no default
     }
